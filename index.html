@@ -9,6 +9,7 @@
 </head>
 <body>
     <div id="ar-container" style="width: 100%; height: 100vh;"></div>
+    <button id="unmute-button" style="position: absolute; top: 10px; left: 10px; z-index: 100;">Bật âm thanh</button>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const mindarThree = new window.MINDAR.IMAGE.MindARThree({
@@ -23,7 +24,7 @@
             const video = document.createElement("video");
             video.src = "video.mp4"; // Đường dẫn đến video của bạn
             video.loop = true;
-            video.muted = false; // Bắt buộc phải tắt tiếng để autoplay hoạt động
+            video.muted = true; // Bắt buộc phải tắt tiếng để autoplay hoạt động
             video.setAttribute("playsinline", "true");
             video.setAttribute("autoplay", "true");
             video.play();
@@ -50,6 +51,14 @@
             anchor.onTargetLost = () => {
                 console.log("Target lost!");
             };
+
+            // Nút bật âm thanh
+            const unmuteButton = document.getElementById("unmute-button");
+            unmuteButton.addEventListener("click", () => {
+                video.muted = false; // Tắt chế độ mute
+                video.play(); // Phát video
+                unmuteButton.style.display = "none"; // Ẩn nút sau khi bật âm thanh
+            });
 
             // Bắt đầu AR
             async function startAR() {
