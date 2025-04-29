@@ -23,7 +23,7 @@
             const video = document.createElement("video");
             video.src = "video.mp4"; // Đường dẫn đến video của bạn
             video.loop = true;
-            video.muted = true; // Bắt buộc phải tắt tiếng để autoplay hoạt động
+            video.muted = false; // Bắt buộc phải tắt tiếng để autoplay hoạt động
             video.setAttribute("playsinline", "true");
             video.setAttribute("autoplay", "true");
             video.play();
