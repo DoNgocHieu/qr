@@ -23,7 +23,9 @@
             const video = document.createElement("video");
             video.src = "video.mp4"; // Đường dẫn đến video của bạn
             video.loop = true;
-            video.muted = false; // Bật tiếng nếu cần
+            video.muted = true; // Bắt buộc phải tắt tiếng để autoplay hoạt động
+            video.setAttribute("playsinline", "true");
+            video.setAttribute("autoplay", "true");
             video.play();
 
             // Tạo texture từ video
