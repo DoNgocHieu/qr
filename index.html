@@ -33,7 +33,7 @@
             const videoTexture = new THREE.VideoTexture(video);
 
             // Tạo một plane để hiển thị video
-            const geometry = new THREE.PlaneGeometry(2, 1.5); // Kích thước lớn hơn
+            const geometry = new THREE.PlaneGeometry(2, 1.2); // Kích thước lớn hơn
             const material = new THREE.MeshBasicMaterial({ map: videoTexture });
             const plane = new THREE.Mesh(geometry, material);
 
